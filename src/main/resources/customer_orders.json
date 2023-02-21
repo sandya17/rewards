@@ -415,7 +415,7 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   },
   {
     "customerId": 1006,
@@ -500,7 +500,7 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   },
   {
     "customerId": 1007,
@@ -585,7 +585,7 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   },
   {
     "customerId": 1008,
@@ -670,7 +670,7 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   },
   {
     "customerId": 1009,
@@ -755,7 +755,7 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   },
   {
     "customerId": 1010,
@@ -840,6 +840,6 @@
         "orderStatus": "Complete",
         "orderType": "Online"
       }
-]
+    ]
   }
 ]
