@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.customer.domain.Customer;
-import com.customer.domain.Rewards;
-import com.customer.service.CustomerRewardsService;
+import com.customer.data.domain.Customer;
+import com.customer.data.domain.Rewards;
+import com.customer.service.RewardsService;
 
 @RestController
 @RequestMapping("/api")
-public class CustomerRewardsController {
+public class RewardsController {
 	
 	@Autowired
-	private CustomerRewardsService customerRewardsService;
+	private RewardsService rewardsService;
 
 	@GetMapping("/customers")
 	public ResponseEntity<List<Customer>> getAllCustomerOrders() {
 		try {
-			List<Customer> customerOrders = customerRewardsService.getAllCustomers();
+			List<Customer> customerOrders = rewardsService.getAllCustomers();
 			
 			return new ResponseEntity<>(customerOrders, HttpStatus.OK);
 		} catch (Exception e) {
@@ -38,7 +38,7 @@ public class CustomerRewardsController {
 	@PostMapping("/customers/upload")
 	public ResponseEntity<List<Customer>> uploadCustomerJsonData(@RequestBody List<Customer> customers) {
 		try {
-			List<Customer> customerOrders = customerRewardsService.saveCustomerData(customers);
+			List<Customer> customerOrders = rewardsService.saveCustomerData(customers);
 			
 			return new ResponseEntity<>(customerOrders, HttpStatus.OK);
 		} catch (Exception e) {
@@ -50,7 +50,7 @@ public class CustomerRewardsController {
 	@PostMapping("/customers/loadFromFile")
 	public ResponseEntity<List<Customer>> loadCustomerDataFromFile() {
 		try {
-			List<Customer> customerOrders = customerRewardsService.loadCustomerDataFromFile();
+			List<Customer> customerOrders = rewardsService.loadCustomerDataFromFile();
 			
 			return new ResponseEntity<>(customerOrders, HttpStatus.OK);
 		} catch (Exception e) {
@@ -62,7 +62,7 @@ public class CustomerRewardsController {
 	@PostMapping("/customers")
 	public ResponseEntity<Customer> createNewCustomerOrder(@RequestBody Customer customer) {
 		try {
-			Customer customerOrder = customerRewardsService.saveCustomer(customer);
+			Customer customerOrder = rewardsService.saveCustomer(customer);
 			
 			return new ResponseEntity<>(customerOrder, HttpStatus.OK);
 		} catch (Exception e) {
@@ -75,7 +75,7 @@ public class CustomerRewardsController {
 	@GetMapping("/customer/rewards")
 	public ResponseEntity<List<Rewards>> getAllCustomerRewards(@RequestParam(required = true) String startDate, @RequestParam(required = true) String endDate) {
 		try {
-			List<Rewards> customerRewards = customerRewardsService.getAllCustomerRewards(startDate, endDate);
+			List<Rewards> customerRewards = rewardsService.getAllCustomerRewards(startDate, endDate);
 			
 			return new ResponseEntity<>(customerRewards, HttpStatus.OK);
 		} catch (Exception e) {

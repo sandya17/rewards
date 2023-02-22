@@ -18,17 +18,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
-import com.customer.domain.Customer;
-import com.customer.domain.Rewards;
-import com.customer.domain.Transactions;
-import com.customer.domain.repo.CustomerRepository;
-import com.customer.domain.repo.TransactionsRepository;
+import com.customer.data.domain.Customer;
+import com.customer.data.domain.Rewards;
+import com.customer.data.domain.Transactions;
+import com.customer.data.domain.repo.CustomerRepository;
+import com.customer.data.domain.repo.TransactionsRepository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 @Component
-public class CustomerRewardsService {
+public class RewardsService {
 
 	private static final int REWARDS_POINT_1X = 1;
 

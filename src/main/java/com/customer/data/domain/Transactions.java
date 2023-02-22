@@ -1,4 +1,4 @@
-package com.customer.domain;
+package com.customer.data.domain;
 
 import java.io.Serializable;
 import java.util.Date;
